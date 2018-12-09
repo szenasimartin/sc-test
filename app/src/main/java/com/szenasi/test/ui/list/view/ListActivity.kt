@@ -1,11 +1,14 @@
 package com.szenasi.test.ui.list.view
 
 import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import android.view.Menu
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.swiperefreshlayout.widget.CircularProgressDrawable
+import com.google.android.material.snackbar.Snackbar
 import com.szenasi.test.R
 import com.szenasi.test.data.model.ItemWithDetails
 import com.szenasi.test.ui.base.view.BaseActivity
@@ -50,6 +53,12 @@ class ListActivity : BaseActivity(), ListContract.ListView {
 
     override fun showLoading() {
         shimmerLayout.startShimmerAnimation()
+        val circularProgressDrawable = CircularProgressDrawable(this)
+        circularProgressDrawable.strokeWidth = 5f
+        circularProgressDrawable.centerRadius = 30f
+        circularProgressDrawable.start()
+        searchButton.background = circularProgressDrawable
+        searchButton.isEnabled = false
     }
 
     override fun hideLoading() {
@@ -61,6 +70,19 @@ class ListActivity : BaseActivity(), ListContract.ListView {
     }
 
     override fun showError(s: String) {
+        val snackbar = Snackbar.make(
+            coordinatorLayout, s,
+            Snackbar.LENGTH_LONG
+        )
+        snackbar.setActionTextColor(Color.BLUE)
+        val snackbarView = snackbar.view
+        snackbarView.setBackgroundColor(Color.RED)
+        snackbar.show()
+    }
+
+    override fun showAllCompleted() {
+        searchButton.background = null
+        searchButton.isEnabled = true
     }
 
     fun hideKeyboard() {

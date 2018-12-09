@@ -39,6 +39,8 @@ class ListPresenter<V : ListContract.ListView>(
                     Log.e("Presenter", err.toString())
                     getView()?.hideLoading()
                     getView()?.showError(err.toString())
+                },{
+                    getView()?.showAllCompleted()
                 })
         )
     }

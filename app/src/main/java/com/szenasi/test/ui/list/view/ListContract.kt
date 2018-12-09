@@ -1,6 +1,5 @@
 package com.szenasi.test.ui.list.view
 
-import com.szenasi.test.data.model.GetItemsResponse
 import com.szenasi.test.data.model.ItemWithDetails
 import com.szenasi.test.ui.base.view.MVPView
 
@@ -14,5 +13,6 @@ interface ListContract {
         fun hideLoading()
         fun showItems(items: ItemWithDetails)
         fun showError(s: String)
+        fun showAllCompleted()
     }
 }
