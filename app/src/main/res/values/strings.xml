@@ -1,0 +1,18 @@
+<resources>
+	<string name="app_name">App</string>
+	<string name="action_settings">Settings</string>
+	<string name="result_number">%1s of %2s</string>
+	<string name="result_date">%1s, 1 adult, economy</string>
+	<string name="multi_airlines">Multiple Airlines</string>
+	<string name="item_agent">via %1s</string>
+	<string name="item_price">£%1s</string>
+	<string name="item_in_date">%1s - %2s</string>
+	<string name="item_in_duration">%1sh %2sm</string>
+	<string name="item_out_date">%1s - %2s</string>
+	<string name="item_out_duration">%1sh %2sm</string>
+	<string name="item_in_places">%1s-%2s, %3s</string>
+	<string name="item_out_places">%1s-%2s, %3s</string>
+	<string name="item_direct">Direct</string>
+	<string name="item_stops">Stops</string>
+	<string name="details_title">Details</string>
+</resources>
