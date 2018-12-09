@@ -1,10 +1,9 @@
 package com.szenasi.test.data.model
 
-import android.os.Parcelable
 import com.squareup.moshi.Json
-import kotlinx.android.parcel.Parcelize
 
-@Parcelize
+
 data class Item(
-    @field:Json(name = "Id") val id: Int, @field:Json(name = "Name") val name: String
-) : Parcelable
+    @field:Json(name = "id") val id: Int, @field:Json(name = "title") val name: String, @field:Json(name = "poster_path") val posterPath: String,
+    @field:Json(name = "popularity") val popularity: String
+)

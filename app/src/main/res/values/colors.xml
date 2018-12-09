@@ -5,4 +5,6 @@
 	<color name="colorAccent">#D81B60</color>
 	<color name="background">#F1F1F1</color>
 	<color name="shimmer_background_color">#F1F1F1</color>
+	<color name="title_background">#80000000</color>
+	<color name="white">#FFFFFF</color>
 </resources>

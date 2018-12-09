@@ -7,8 +7,8 @@ import javax.inject.Inject
 
 class GetItemsUseCase @Inject internal constructor(private val getItemsDataSource: GetItemsDataSource) {
 
-    fun execute(): Single<GetItemsResponse> {
-        return getItemsDataSource.getItems()
+    fun execute(query: String): Single<GetItemsResponse> {
+        return getItemsDataSource.getItems(query)
 
     }
 }

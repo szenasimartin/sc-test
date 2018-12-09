@@ -1,6 +1,7 @@
 package com.szenasi.test.ui.list
 
 import com.szenasi.test.ui.list.presenter.ListPresenter
+import com.szenasi.test.ui.list.usecase.GetAllItemDetailsUseCase
 import com.szenasi.test.ui.list.usecase.GetItemsUseCase
 import com.szenasi.test.ui.list.view.ListContract
 import com.szenasi.test.utils.SchedulerProvider
@@ -14,10 +15,10 @@ class ListActivityModule {
     @Provides
     internal fun provideListPresenter(
         schedulerProvider: SchedulerProvider, compositeDisposable: CompositeDisposable,
-        getItemsUseCase: GetItemsUseCase
+        getItemsUseCase: GetItemsUseCase, getAllItemDetailsUseCase: GetAllItemDetailsUseCase
     )
             : ListPresenter<ListContract.ListView> = ListPresenter(
-        schedulerProvider, compositeDisposable, getItemsUseCase
+        schedulerProvider, compositeDisposable, getItemsUseCase, getAllItemDetailsUseCase
     )
 
 }

@@ -6,12 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.szenasi.test.R
-import com.szenasi.test.data.model.Item
+import com.szenasi.test.data.model.ItemWithDetails
 import com.szenasi.test.ui.detail.view.DetailIntent
+import com.szenasi.test.utils.load
 import kotlinx.android.synthetic.main.item_list.view.*
 
 class SearchResultAdapter(private val context: Context) : RecyclerView.Adapter<ViewHolder>() {
-    private val items = ArrayList<Item>()
+    private val items = ArrayList<ItemWithDetails>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_list, parent, false))
@@ -26,11 +27,17 @@ class SearchResultAdapter(private val context: Context) : RecyclerView.Adapter<V
         holder.itemView.setOnClickListener {
             context.startActivity(context.DetailIntent(items[position]))
         }
+        holder.posterImage.load(items[position].posterPath)
+        holder.itemBudget.text = "budget: %.2f M USD".format(items[position].budget/1000000)
     }
 
-    fun addItem(item: List<Item>) {
-        items.addAll(item)
+    fun addItem(item: ItemWithDetails) {
+        items.add(item)
         notifyDataSetChanged()
+    }
+
+    fun clear() {
+        items.clear()
     }
 
 
@@ -38,4 +45,6 @@ class SearchResultAdapter(private val context: Context) : RecyclerView.Adapter<V
 
 class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val itemNameView = view.itemName
+    val posterImage = view.posterImage
+    val itemBudget = view.itemBudget
 }
