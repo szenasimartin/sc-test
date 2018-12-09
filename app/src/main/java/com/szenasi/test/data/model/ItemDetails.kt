@@ -1,10 +1,8 @@
 package com.szenasi.test.data.model
 
-import android.os.Parcelable
 import com.squareup.moshi.Json
-import kotlinx.android.parcel.Parcelize
 
 
 data class ItemDetails(
-    @field:Json(name = "budget") val budget: Double
+    @field:Json(name = "budget") val budget: Double, @field:Json(name = "release_date") val releaseDate: String
 )

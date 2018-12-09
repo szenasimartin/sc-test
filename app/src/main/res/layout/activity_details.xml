@@ -57,13 +57,22 @@
 			android:orientation="vertical">
 			<TextView
 				android:transitionName="budget"
-				android:gravity="center"
+				android:textSize="14sp"
+				android:padding="8dp"
 				android:id="@+id/detailsitemBudget"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				/>
 			<TextView
-				android:text="asd"
+				android:textSize="14sp"
+				android:padding="8dp"
+				android:id="@+id/detailsPopularity"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+			<TextView
+				android:textSize="14sp"
+				android:padding="8dp"
+				android:id="@+id/detailsReleaseDate"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content" />
 		</LinearLayout>

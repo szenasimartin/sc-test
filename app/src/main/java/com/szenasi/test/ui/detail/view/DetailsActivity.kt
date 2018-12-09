@@ -3,15 +3,14 @@ package com.szenasi.test.ui.detail.view
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import com.szenasi.test.R
-import com.szenasi.test.data.model.Item
+import android.view.MenuItem
 import com.szenasi.test.data.model.ItemWithDetails
 import com.szenasi.test.ui.base.view.BaseActivity
 import com.szenasi.test.ui.detail.presenter.DetailsPresenter
 import com.szenasi.test.utils.load
 import kotlinx.android.synthetic.main.activity_details.*
-import kotlinx.android.synthetic.main.item_list.*
 import javax.inject.Inject
+import com.szenasi.test.R
 
 
 private const val INTENT_ITEM_ID = "item_id"
@@ -36,7 +35,9 @@ class DetailsActivity : BaseActivity(), DetailsContract.DetailsView {
         val item: ItemWithDetails = intent.getParcelableExtra(INTENT_ITEM_ID)
         detailsPosterImage.load(item.posterPath)
         detailsToolbar.title = item.name
-        detailsitemBudget.text = "budget: %.2f M USD".format(item.budget / 1000000)
+        detailsitemBudget.text = getString(R.string.budget).format(item.budget / 1000000)
+        detailsPopularity.text = getString(R.string.popularity).format(item.popularity)
+        detailsReleaseDate.text = getString(R.string.release_date, item.releaseDate)
         setToolbar()
     }
 
@@ -49,6 +50,17 @@ class DetailsActivity : BaseActivity(), DetailsContract.DetailsView {
         setSupportActionBar(detailsToolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.getItemId()) {
+            android.R.id.home -> {
+                onBackPressed()
+                return true
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
 
