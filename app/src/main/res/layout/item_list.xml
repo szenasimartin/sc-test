@@ -12,6 +12,7 @@
 		android:layout_height="match_parent">
 
 		<ImageView
+			android:transitionName="poster"
 			android:id="@+id/posterImage"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent" />
@@ -35,6 +36,7 @@
 					android:layout_gravity="center"
 					android:gravity="center"/>
 				<TextView
+					android:transitionName="budget"
 					android:textColor="@color/white"
 					android:gravity="center"
 					android:id="@+id/itemBudget"

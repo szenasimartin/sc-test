@@ -8,6 +8,9 @@ import com.szenasi.test.data.model.Item
 import com.szenasi.test.data.model.ItemWithDetails
 import com.szenasi.test.ui.base.view.BaseActivity
 import com.szenasi.test.ui.detail.presenter.DetailsPresenter
+import com.szenasi.test.utils.load
+import kotlinx.android.synthetic.main.activity_details.*
+import kotlinx.android.synthetic.main.item_list.*
 import javax.inject.Inject
 
 
@@ -31,11 +34,21 @@ class DetailsActivity : BaseActivity(), DetailsContract.DetailsView {
         setContentView(R.layout.activity_details)
         presenter.onAttach(this)
         val item: ItemWithDetails = intent.getParcelableExtra(INTENT_ITEM_ID)
+        detailsPosterImage.load(item.posterPath)
+        detailsToolbar.title = item.name
+        detailsitemBudget.text = "budget: %.2f M USD".format(item.budget / 1000000)
+        setToolbar()
     }
 
     override fun onDestroy() {
         presenter.onDetach()
         super.onDestroy()
+    }
+
+    private fun setToolbar() {
+        setSupportActionBar(detailsToolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
     }
 
 

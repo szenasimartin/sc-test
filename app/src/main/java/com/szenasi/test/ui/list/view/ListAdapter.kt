@@ -1,9 +1,12 @@
 package com.szenasi.test.ui.list.view
 
+import android.app.Activity
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.ActivityOptionsCompat
+import androidx.core.util.Pair
 import androidx.recyclerview.widget.RecyclerView
 import com.szenasi.test.R
 import com.szenasi.test.data.model.ItemWithDetails
@@ -25,10 +28,13 @@ class SearchResultAdapter(private val context: Context) : RecyclerView.Adapter<V
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.itemNameView.text = items[position].name
         holder.itemView.setOnClickListener {
-            context.startActivity(context.DetailIntent(items[position]))
+            val p1 = Pair<View, String>(holder.posterImage, "poster")
+            val p2 = Pair<View, String>(holder.itemBudget, "budget")
+            val options = ActivityOptionsCompat.makeSceneTransitionAnimation(context as Activity, p1, p2)
+            context.startActivity(context.DetailIntent(items[position]), options.toBundle())
         }
         holder.posterImage.load(items[position].posterPath)
-        holder.itemBudget.text = "budget: %.2f M USD".format(items[position].budget/1000000)
+        holder.itemBudget.text = "budget: %.2f M USD".format(items[position].budget / 1000000)
     }
 
     fun addItem(item: ItemWithDetails) {
