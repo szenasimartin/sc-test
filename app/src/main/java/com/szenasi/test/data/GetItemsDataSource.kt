@@ -20,7 +20,7 @@ class GetItemsDataSource(private val getItemsApi: GetItemsApi) {
         }
     }
 
-    fun createItem(item: Item, itemDetails: ItemDetails): ItemWithDetails {
+    private fun createItem(item: Item, itemDetails: ItemDetails): ItemWithDetails {
         return ItemWithDetails(item.id, item.name, item.posterPath ?: "", item.popularity, itemDetails.budget, itemDetails.releaseDate)
     }
 }

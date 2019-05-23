@@ -145,7 +145,8 @@
 						android:layout_height="24dp"
 						android:layout_gravity="center_vertical"
 						android:layout_marginStart="8dp"
-						android:background="@color/shimmer_background_color" />
+						android:background="@color/shimmer_background_color"
+                        android:contentDescription="@string/shrimmer"/>
 
 					<View
 						android:layout_width="0dp"
@@ -154,7 +155,7 @@
 						android:layout_marginStart="4dp"
 						android:layout_weight="1"
 						android:background="@color/shimmer_background_color"
-						android:text="10.0"
+						android:text="@string/score"
 						android:textSize="18sp"
 						android:textStyle="bold" />
 
@@ -179,7 +180,7 @@
 			</LinearLayout>
 		</androidx.cardview.widget.CardView>
 
-		<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+		<androidx.cardview.widget.CardView
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginStart="8dp"
@@ -312,7 +313,8 @@
 						android:layout_height="24dp"
 						android:layout_gravity="center_vertical"
 						android:layout_marginStart="8dp"
-						android:background="@color/shimmer_background_color" />
+						android:background="@color/shimmer_background_color"
+                        android:contentDescription="@string/shrimmer" />
 
 					<View
 						android:layout_width="0dp"
@@ -321,7 +323,7 @@
 						android:layout_marginStart="4dp"
 						android:layout_weight="1"
 						android:background="@color/shimmer_background_color"
-						android:text="10.0"
+						android:text="@string/score"
 						android:textSize="18sp"
 						android:textStyle="bold" />
 
@@ -346,7 +348,7 @@
 			</LinearLayout>
 		</androidx.cardview.widget.CardView>
 
-		<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+		<androidx.cardview.widget.CardView
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginStart="8dp"
@@ -479,7 +481,8 @@
 						android:layout_height="24dp"
 						android:layout_gravity="center_vertical"
 						android:layout_marginStart="8dp"
-						android:background="@color/shimmer_background_color" />
+						android:background="@color/shimmer_background_color"
+                        android:contentDescription="@string/shrimmer" />
 
 					<View
 						android:layout_width="0dp"
@@ -488,7 +491,7 @@
 						android:layout_marginStart="4dp"
 						android:layout_weight="1"
 						android:background="@color/shimmer_background_color"
-						android:text="10.0"
+						android:text="@string/score"
 						android:textSize="18sp"
 						android:textStyle="bold" />
 
@@ -513,7 +516,7 @@
 			</LinearLayout>
 		</androidx.cardview.widget.CardView>
 
-		<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+		<androidx.cardview.widget.CardView
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginStart="8dp"
@@ -646,7 +649,8 @@
 						android:layout_height="24dp"
 						android:layout_gravity="center_vertical"
 						android:layout_marginStart="8dp"
-						android:background="@color/shimmer_background_color" />
+						android:background="@color/shimmer_background_color"
+                        android:contentDescription="@string/shrimmer" />
 
 					<View
 						android:layout_width="0dp"
@@ -655,7 +659,7 @@
 						android:layout_marginStart="4dp"
 						android:layout_weight="1"
 						android:background="@color/shimmer_background_color"
-						android:text="10.0"
+						android:text="@string/score"
 						android:textSize="18sp"
 						android:textStyle="bold" />
 

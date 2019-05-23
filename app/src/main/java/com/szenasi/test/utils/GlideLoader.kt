@@ -5,7 +5,7 @@ import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.request.RequestOptions
 import com.szenasi.test.R
 
-fun ImageView.load(pathString: String?, onLoadingFinished: () -> Unit = {}) {
+fun ImageView.load(pathString: String?) {
     val circularProgressDrawable = CircularProgressDrawable(context)
     circularProgressDrawable.strokeWidth = 5f
     circularProgressDrawable.centerRadius = 30f

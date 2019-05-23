@@ -15,7 +15,8 @@
 			android:transitionName="poster"
 			android:id="@+id/posterImage"
 			android:layout_width="match_parent"
-			android:layout_height="match_parent" />
+			android:layout_height="match_parent"
+			android:contentDescription="@string/poster"/>
 
 		<FrameLayout
 			android:layout_alignParentBottom="true"
