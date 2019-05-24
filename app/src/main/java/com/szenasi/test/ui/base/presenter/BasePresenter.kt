@@ -1,10 +1,11 @@
 package com.szenasi.test.ui.base.presenter
 
 import com.szenasi.test.ui.base.view.MVPView
+import com.szenasi.test.utils.BaseSchedulerProvider
 import com.szenasi.test.utils.SchedulerProvider
 import io.reactivex.disposables.CompositeDisposable
 
-abstract class BasePresenter<V : MVPView> internal constructor(protected val schedulerProvider: SchedulerProvider, protected val compositeDisposable: CompositeDisposable) :
+abstract class BasePresenter<V : MVPView> internal constructor(protected val schedulerProvider: BaseSchedulerProvider, protected val compositeDisposable: CompositeDisposable) :
     MVPPresenter<V> {
 
     private var view: V? = null
